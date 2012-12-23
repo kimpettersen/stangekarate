@@ -1,0 +1,12 @@
+{% load thumbnail %}
+
+<div class="gallery" id="cmspluginGallery{{ gallery.pk }}">
+	{% for image in images %}
+		<div class="gallery_img">
+			<a href="{{ image.src.url }}" title="{{ image.title }}" rel="lightbox['static']">
+			<img src="{% thumbnail image.src 115x80 crop %}" alt="{{ image.alt }}" rel="#cmspluginGalleryImage{{ image.pk }}" />
+			</a>
+		</div>
+	{% endfor %}
+</div>
+
